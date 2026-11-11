@@ -1,0 +1,6 @@
+workflow,amount_min_inr,amount_max_inr,approver_role,sla_hours,on_expiry
+purchase_order,0,25000,purchasing_manager,24,escalate_to_finance
+purchase_order,25000.01,200000,finance_manager,24,escalate_to_director
+purchase_order,200000.01,999999999,director,48,block_and_notify
+supplier_payment,0,50000,finance_manager,24,escalate_to_director
+supplier_payment,50000.01,999999999,director,48,block_and_notify

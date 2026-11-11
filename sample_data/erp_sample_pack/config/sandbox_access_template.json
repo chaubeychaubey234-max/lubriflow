@@ -1,0 +1,9 @@
+{
+  "environment": "sandbox",
+  "tenant_id": "demo-manufacturing-01",
+  "api_base_url": "https://sandbox.example.invalid",
+  "client_id": "PLACEHOLDER_NOT_A_CREDENTIAL",
+  "secret_reference": "vault://erp/sandbox/provider-name",
+  "credentials_in_zip": false,
+  "setup_status": "NOT_CONFIGURED"
+}

@@ -1,0 +1,3 @@
+so_id,customer_id,sku,qty,unit_price_inr,status
+SO-001,C001,FG-BRK,50,850,confirmed
+SO-002,C002,FG-BRK,30,875,open

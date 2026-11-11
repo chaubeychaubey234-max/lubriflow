@@ -1,0 +1,37 @@
+{
+  "testers": [
+    {
+      "role": "purchasing",
+      "name": "UNASSIGNED",
+      "signoff": "PENDING"
+    },
+    {
+      "role": "stores",
+      "name": "UNASSIGNED",
+      "signoff": "PENDING"
+    },
+    {
+      "role": "finance",
+      "name": "UNASSIGNED",
+      "signoff": "PENDING"
+    },
+    {
+      "role": "sales",
+      "name": "UNASSIGNED",
+      "signoff": "PENDING"
+    },
+    {
+      "role": "production",
+      "name": "UNASSIGNED",
+      "signoff": "PENDING"
+    }
+  ],
+  "exit_criteria": [
+    "zero critical defects",
+    "financial reconciliation exact",
+    "RBAC verified",
+    "audit logs verified",
+    "backup restore tested",
+    "manual approval flows validated"
+  ]
+}

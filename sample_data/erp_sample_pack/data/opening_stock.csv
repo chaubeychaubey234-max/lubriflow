@@ -1,0 +1,5 @@
+warehouse_id,sku,qty,unit_cost_inr,extended_value_inr
+WH-RM,RM-STL,1000,120,120000
+WH-RM,RM-BLT,500,35,17500
+WH-RM,PK-BOX,400,18,7200
+WH-FG,FG-BRK,150,550,82500

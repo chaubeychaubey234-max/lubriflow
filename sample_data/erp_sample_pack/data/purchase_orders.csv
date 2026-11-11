@@ -1,0 +1,3 @@
+po_id,pr_id,vendor_id,sku,qty,unit_price_inr,net_amount_inr,status
+PO-001,PR-001,V001,RM-STL,500,125,62500,received
+PO-002,PR-002,V002,RM-BLT,300,36,10800,approved

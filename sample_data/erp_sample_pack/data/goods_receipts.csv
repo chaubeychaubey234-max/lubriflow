@@ -1,0 +1,2 @@
+grn_id,po_id,date,sku,received_qty,accepted_qty,rejected_qty,warehouse
+GRN-001,PO-001,2026-10-05,RM-STL,500,490,10,WH-RM

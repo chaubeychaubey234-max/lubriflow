@@ -1,0 +1,2 @@
+invoice_id,so_id,taxable_inr,gst_rate_demo,gst_inr,total_inr,due_date
+SINV-001,SO-001,42500,0.18,7650,50150,2026-11-15

@@ -1,0 +1,14 @@
+{
+  "cloud": "TBD AWS/Azure/GCP",
+  "region": "ap-south-1 proposed",
+  "domain": "erp.example.invalid",
+  "hosting_project": "TBD",
+  "estimated_tenants": 10,
+  "users_per_tenant": 50,
+  "monthly_invoices": 10000,
+  "monthly_stock_movements": 50000,
+  "storage_gb_initial": 100,
+  "database": "PostgreSQL",
+  "object_storage": "private encrypted bucket",
+  "secrets": "managed secret vault only"
+}

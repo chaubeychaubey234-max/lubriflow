@@ -1,0 +1,3 @@
+pr_id,request_date,sku,qty,requester,status
+PR-001,2026-10-01,RM-STL,500,production.manager,approved
+PR-002,2026-10-02,RM-BLT,300,stores.lead,approved

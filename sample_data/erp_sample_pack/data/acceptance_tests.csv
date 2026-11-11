@@ -1,0 +1,7 @@
+test_id,module,scenario,expected_result,tester_role
+AT-001,procurement,PR to PO approval,PO above 25k waits for finance approval,purchasing
+AT-002,inventory,GRN with 10 rejected,Accepted stock increases by 490 only,stores
+AT-003,finance,Three-way match mismatch,Invoice blocked for review,finance
+AT-004,sales,Invoice from SO,Net + tax = gross,sales
+AT-005,production,WO consumes BOM,Inventory movements traceable,production
+AT-006,security,Cross-tenant access,Denied and audit logged,security

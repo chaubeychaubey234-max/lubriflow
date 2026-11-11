@@ -1,0 +1,41 @@
+{
+  "products": [
+    {
+      "product": "TallyPrime",
+      "edition": "TBD exact version/license",
+      "workflows": [
+        "voucher entry",
+        "GST invoice",
+        "stock journal",
+        "bank reconciliation"
+      ]
+    },
+    {
+      "product": "Zoho Books",
+      "edition": "TBD plan/version",
+      "workflows": [
+        "invoice approval",
+        "purchase bills",
+        "bank feeds"
+      ]
+    },
+    {
+      "product": "Zoho Inventory",
+      "edition": "TBD plan/version",
+      "workflows": [
+        "PO to GRN",
+        "stock transfer",
+        "reorder"
+      ]
+    }
+  ],
+  "metrics": [
+    "time_seconds",
+    "click_count",
+    "manual_steps",
+    "error_count",
+    "approval_latency",
+    "reconciliation_accuracy"
+  ],
+  "note": "No claims of feature parity or measured performance; collect baselines using licensed test environments."
+}

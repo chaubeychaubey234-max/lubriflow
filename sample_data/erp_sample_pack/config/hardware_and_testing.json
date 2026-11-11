@@ -1,0 +1,20 @@
+{
+  "browser_matrix": [
+    "Chrome current",
+    "Safari current",
+    "Firefox current",
+    "Edge current"
+  ],
+  "browser_automation": "Playwright proposed",
+  "barcode_scanner_models": [
+    "Zebra DS2208 (example only)",
+    "Honeywell Voyager 1250g (example only)"
+  ],
+  "printer_models": [
+    "Zebra ZD421 (example only)",
+    "Epson TM-T82 (example only)"
+  ],
+  "actual_devices_available": false,
+  "test_accounts": "create in sandbox; no credentials in archive",
+  "secret_setup": "Use vault/CI protected variables, never commit .env or tokens"
+}

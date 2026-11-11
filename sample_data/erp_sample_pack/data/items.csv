@@ -1,0 +1,5 @@
+sku,description,type,uom,standard_cost_inr,reorder_point,hsn_demo
+RM-STL,Steel bar,raw,KG,120,500,7214
+RM-BLT,Fastener set,raw,SET,35,200,7318
+FG-BRK,Machined bracket,finished,EA,550,100,7326
+PK-BOX,Packing carton,packing,EA,18,300,4819

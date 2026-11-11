@@ -1,0 +1,4 @@
+bom_id,finished_sku,component_sku,qty_per_unit,scrap_pct
+BOM-001,FG-BRK,RM-STL,2,0.02
+BOM-001,FG-BRK,RM-BLT,1,0
+BOM-001,FG-BRK,PK-BOX,1,0

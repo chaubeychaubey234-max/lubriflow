@@ -1,0 +1,11 @@
+account_code,account_name,debit_inr,credit_inr
+1000,Cash and bank,500000,0
+1100,Trade receivables,100000,0
+1200,Inventory,227200,0
+1500,Property plant equipment net,1402500,0
+6000,Operating expenses,50000,0
+2000,Trade payables,0,120000
+2100,Customer advances,0,20000
+2200,Other liabilities,0,59600
+3000,Share capital,0,1800000
+3100,Retained earnings,0,280100

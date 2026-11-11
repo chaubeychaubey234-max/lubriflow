@@ -1,0 +1,80 @@
+name: lubriflow
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: lubriflow
+      POSTGRES_USER: lubriflow
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes: ["database:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lubriflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  migrate:
+    build: {context: ., dockerfile: backend/Dockerfile}
+    environment: &backend-env
+      DATABASE_URL: postgresql+psycopg://lubriflow:${POSTGRES_PASSWORD}@postgres:5432/lubriflow
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:3000}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      DOCUMENT_ROOT: /app/var/documents
+      S3_BUCKET: ${S3_BUCKET:-}
+      S3_ENDPOINT_URL: ${S3_ENDPOINT_URL:-}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION:-me-central-1}
+      AZURE_DOCUMENT_ENDPOINT: ${AZURE_DOCUMENT_ENDPOINT:-}
+      AZURE_DOCUMENT_KEY: ${AZURE_DOCUMENT_KEY:-}
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-}
+      OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:-}
+      OIDC_SESSION_SECRET: ${OIDC_SESSION_SECRET:-}
+      OIDC_REQUIRED_AMR: ${OIDC_REQUIRED_AMR:-["mfa"]}
+      OIDC_ONLY: ${OIDC_ONLY:-false}
+      MFA_ENCRYPTION_KEY: ${MFA_ENCRYPTION_KEY:-}
+    command: ["uv", "run", "--no-sync", "alembic", "upgrade", "head"]
+    depends_on:
+      postgres: {condition: service_healthy}
+  api:
+    build: {context: ., dockerfile: backend/Dockerfile}
+    environment: *backend-env
+    volumes: ["documents:/app/var/documents"]
+    command: ["uv", "run", "--no-sync", "uvicorn", "lubriflow.api:app", "--host", "0.0.0.0", "--port", "8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  worker:
+    build: {context: ., dockerfile: backend/Dockerfile}
+    env_file:
+      - path: .env
+        required: false
+    environment: *backend-env
+    volumes: ["documents:/app/var/documents"]
+    command: ["uv", "run", "--no-sync", "python", "-m", "lubriflow.worker"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  web:
+    build:
+      context: frontend
+      args: {API_INTERNAL_URL: "http://api:8000"}
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [api]
+    restart: unless-stopped
+  backup:
+    profiles: ["backup"]
+    build: {context: ., dockerfile: backend/Dockerfile}
+    environment:
+      <<: *backend-env
+      BACKUP_ENCRYPTION_KEY: ${BACKUP_ENCRYPTION_KEY:-}
+      BACKUP_BUCKET: ${BACKUP_BUCKET:-}
+      BACKUP_ENDPOINT_URL: ${BACKUP_ENDPOINT_URL:-}
+    volumes: ["documents:/app/var/documents:ro", "recovery:/app/var/recovery"]
+    command: ["uv", "run", "--no-sync", "python", "-m", "lubriflow.disaster_recovery", "service", "/app/var/recovery", "--upload", "--interval-hours", "24"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: "on-failure:3"
+volumes:
+  database:
+  documents:
+  recovery:

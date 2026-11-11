@@ -1,0 +1,2 @@
+invoice_id,po_id,vendor_id,taxable_inr,gst_rate_demo,gst_inr,gross_inr,status
+PINV-001,PO-001,V001,61250,0.18,11025,72275,pending_3_way_match

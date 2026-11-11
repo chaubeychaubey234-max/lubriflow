@@ -1,0 +1,39 @@
+# Run from product root with both compose files; DNS must point to this host.
+services:
+  proxy:
+    image: caddy:2
+    ports: ["80:80", "443:443"]
+    environment:
+      PUBLIC_HOST: ${PUBLIC_HOST:?Set the public DNS hostname}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - tls_data:/data
+      - tls_config:/config
+    depends_on: [web]
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:true"]
+    logging: &logs
+      driver: json-file
+      options: {max-size: "10m", max-file: "5"}
+  api:
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging: *logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  worker:
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging: *logs
+  web:
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging: *logs
+  postgres:
+    logging: *logs
+volumes:
+  tls_data:
+  tls_config:

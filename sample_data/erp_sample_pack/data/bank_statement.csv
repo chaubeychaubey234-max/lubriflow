@@ -1,0 +1,5 @@
+bank_txn_id,date,description,money_in_inr,money_out_inr,closing_balance_inr,match_status
+BNK-001,2026-10-01,Opening balance,0,0,500000,opening
+BNK-002,2026-10-07,Customer advance ADV-001,20000,0,520000,matched
+BNK-003,2026-10-10,Utilities payment,0,12000,508000,unmatched
+BNK-004,2026-10-12,Vendor settlement,0,25000,483000,unmatched

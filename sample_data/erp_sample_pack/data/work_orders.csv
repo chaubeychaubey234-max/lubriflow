@@ -1,0 +1,2 @@
+wo_id,bom_id,planned_qty,completed_qty,scrapped_qty,status
+WO-001,BOM-001,100,75,2,in_progress

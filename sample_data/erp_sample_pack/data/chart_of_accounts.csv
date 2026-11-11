@@ -1,0 +1,13 @@
+account_code,account_name,type
+1000,Cash and bank,Asset
+1100,Trade receivables,Asset
+1200,Inventory,Asset
+1500,Property plant equipment net,Asset
+2000,Trade payables,Liability
+2100,Customer advances,Liability
+2200,Other liabilities,Liability
+3000,Share capital,Equity
+3100,Retained earnings,Equity
+4000,Sales,Revenue
+5000,Cost of goods sold,Expense
+6000,Operating expenses,Expense

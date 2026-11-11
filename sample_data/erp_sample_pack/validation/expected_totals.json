@@ -1,0 +1,13 @@
+{
+  "opening_trial_balance_debit_inr": 2279700,
+  "opening_trial_balance_credit_inr": 2279700,
+  "opening_inventory_inr": 227200,
+  "purchase_order_001_net_inr": 62500,
+  "accepted_grn_001_qty": 490,
+  "supplier_invoice_001_gross_inr": 72275,
+  "sales_invoice_001_gross_inr": 50150,
+  "advance_001_unapplied_inr": 15000,
+  "asset_net_book_value_total_inr": 1402500,
+  "bank_statement_ending_inr": 483000,
+  "journal_entries_balanced": true
+}

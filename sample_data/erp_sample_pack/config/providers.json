@@ -1,0 +1,45 @@
+{
+  "banking": {
+    "preferred": "TBD",
+    "candidates": [
+      "HDFC Bank",
+      "ICICI Bank"
+    ],
+    "mode": "sandbox_only"
+  },
+  "payments": {
+    "preferred": "TBD",
+    "candidates": [
+      "Razorpay",
+      "Cashfree"
+    ]
+  },
+  "email": {
+    "preferred": "TBD",
+    "candidates": [
+      "Amazon SES",
+      "SendGrid"
+    ]
+  },
+  "whatsapp": {
+    "preferred": "TBD",
+    "candidates": [
+      "Meta WhatsApp Business Platform"
+    ]
+  },
+  "ocr": {
+    "preferred": "TBD",
+    "candidates": [
+      "Azure Document Intelligence",
+      "Google Document AI"
+    ]
+  },
+  "shipping": {
+    "preferred": "TBD",
+    "candidates": [
+      "Shiprocket",
+      "Delhivery"
+    ]
+  },
+  "note": "Illustrative candidates, no integrations or accounts provisioned."
+}

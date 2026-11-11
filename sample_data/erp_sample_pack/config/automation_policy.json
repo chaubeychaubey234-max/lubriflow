@@ -1,0 +1,31 @@
+{
+  "auto_allowed": [
+    "create_draft_requisitions_on_reorder",
+    "flag_duplicate_invoices",
+    "suggest_3_way_matches",
+    "suggest_bank_matches",
+    "draft_reminders",
+    "generate_exception_reports"
+  ],
+  "approval_required": [
+    "post_journals",
+    "issue_tax_invoices",
+    "release_purchase_orders_above_threshold",
+    "pay_vendors",
+    "write_off_inventory",
+    "change_master_bank_details"
+  ],
+  "never_autonomous": [
+    "change_security_policy",
+    "delete_audit_logs",
+    "transfer_funds_without_authorization"
+  ],
+  "guardrails": [
+    "idempotency_key",
+    "immutable_audit_events",
+    "human_approval_receipt",
+    "role_based_access",
+    "confidence_thresholds",
+    "retry_with_dead_letter_queue"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "identity": {
+    "sso": "OIDC/SAML TBD",
+    "tenant_isolation": "mandatory",
+    "mfa": "required for all privileged and finance users; recommended for all",
+    "roles": [
+      "admin",
+      "purchasing",
+      "stores",
+      "finance",
+      "sales",
+      "production",
+      "auditor"
+    ],
+    "service_accounts": "short-lived credentials only"
+  },
+  "recovery": {
+    "target_rpo_minutes": 15,
+    "target_rto_hours": 4,
+    "retention_days": 365,
+    "backup_destination": "separate account/region TBD",
+    "encryption": "at rest and in transit",
+    "restore_drill": "quarterly",
+    "status": "proposed targets, not validated"
+  }
+}

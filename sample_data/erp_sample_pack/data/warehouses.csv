@@ -1,0 +1,3 @@
+warehouse_id,name,site,bin_tracking
+WH-RM,Raw Materials,NOIDA-01,True
+WH-FG,Finished Goods,NOIDA-01,True

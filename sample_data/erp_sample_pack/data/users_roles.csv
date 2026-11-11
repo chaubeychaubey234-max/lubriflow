@@ -1,0 +1,8 @@
+user_id,role,site,mfa_required,access
+u-admin,tenant_admin,ALL,True,all_except_secrets
+u-buyer,purchasing,NOIDA-01,True,purchase_orders
+u-stores,stores,NOIDA-01,True,receipts_inventory
+u-fin,finance,NOIDA-01,True,accounting_payments
+u-sales,sales,NOIDA-01,True,sales_orders
+u-prod,production,NOIDA-01,True,bom_work_orders
+u-auditor,auditor,ALL,True,read_only

@@ -1,0 +1,44 @@
+{
+  "release": {
+    "country": "India",
+    "currency": "INR",
+    "timezone": "Asia/Kolkata",
+    "language": "en-IN",
+    "industry_modules": [
+      "discrete_manufacturing",
+      "inventory",
+      "procurement",
+      "sales",
+      "accounting"
+    ],
+    "phase_2": [
+      "services",
+      "retail",
+      "distribution",
+      "multi_country"
+    ]
+  },
+  "tax_policy": {
+    "status": "DRAFT_ACCOUNTANT_REVIEW_REQUIRED",
+    "gst_rates_are_examples_only": true,
+    "fiscal_year": "2026-04-01 to 2027-03-31",
+    "accounting_basis": "accrual",
+    "stock_valuation": "weighted_average_proposed",
+    "rounding": "2 decimals",
+    "invoice_numbering": "per tenant and FY"
+  },
+  "accountant_validation": {
+    "reviewer": "TO_BE_ASSIGNED",
+    "approval_status": "NOT_APPROVED",
+    "checklist": [
+      "GST applicability and place of supply",
+      "TDS/TCS applicability",
+      "invoice sequencing",
+      "ITC eligibility",
+      "inventory valuation",
+      "depreciation and fixed asset policy",
+      "bank reconciliation",
+      "financial statements"
+    ]
+  }
+}
